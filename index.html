@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview FAQ</title>
+    <style>
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        .answer {
+            display: none;
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java Interview FAQ</h1>
+
+    <!-- FAQ Items -->
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer1')">1. Sort an Array</div>
+        <div class="answer" id="answer1">
+            <pre><code>
+import java.util.Arrays;
+
+public class SortArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        Arrays.sort(arr);
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sorted Array: [1, 2, 5, 5, 6, 9]</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer2')">2. Reverse a String</div>
+        <div class="answer" id="answer2">
+            <pre><code>
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String reversed = new StringBuilder(str).reverse().toString();
+        System.out.println("Reversed String: " + reversed);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Reversed String: olleH</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer3')">3. Swap Two Numbers</div>
+        <div class="answer" id="answer3">
+            <pre><code>
+public class SwapNumbers {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("After Swapping: a = " + a + ", b = " + b);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>After Swapping: a = 10, b = 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer4')">4. Count Occurrences of Each Character</div>
+        <div class="answer" id="answer4">
+            <pre><code>
+import java.util.HashMap;
+
+public class CountCharacters {
+    public static void main(String[] args) {
+        String str = "hello";
+        HashMap<Character, Integer> charCountMap = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+        System.out.println("Character Counts: " + charCountMap);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Character Counts: {h=1, e=1, l=2, o=1}</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer5')">5. Reverse a Number</div>
+        <div class="answer" id="answer5">
+            <pre><code>
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int num = 1234, reversed = 0;
+        while (num != 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println("Reversed Number: " + reversed);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Reversed Number: 4321</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer6')">6. Print Triangle Patterns</div>
+        <div class="answer" id="answer6">
+            <pre><code>
+public class TrianglePattern {
+    public static void main(String[] args) {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer7')">7. Find Length of the String Without Length Method</div>
+        <div class="answer" id="answer7">
+            <pre><code>
+public class StringLength {
+    public static void main(String[] args) {
+        String str = "Hello";
+        int length = 0;
+        for (char c : str.toCharArray()) {
+            length++;
+        }
+        System.out.println("Length of String: " + length);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Length of String: 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer8')">8. Find the Smallest Number in an Array</div>
+        <div class="answer" id="answer8">
+            <pre><code>
+public class SmallestNumber {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Smallest Number: " + min);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Smallest Number: 1</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer9')">9. Reverse the Words in a Sentence</div>
+        <div class="answer" id="answer9">
+            <pre><code>
+public class ReverseWords {
+    public static void main(String[] args) {
+        String sentence = "Hello World";
+        String[] words = sentence.split(" ");
+        StringBuilder reversedSentence = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedSentence.append(words[i]).append(" ");
+        }
+        System.out.println("Reversed Sentence: " + reversedSentence.toString().trim());
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Reversed Sentence: World Hello</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer10')">10. Find an Element Present in the Array or Not</div>
+        <div class="answer" id="answer10">
+            <pre><code>
+public class FindElement {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int target = 9;
+        boolean found = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println("Element Found: " + found);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Element Found: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer11')">11. Find the Position of an English Alphabet</div>
+        <div class="answer" id="answer11">
+            <pre><code>
+public class AlphabetPosition {
+    public static void main(String[] args) {
+        char ch = 'D';
+        int position = ch - 'A' + 1;
+        System.out.println("Position of " + ch + " is: " + position);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Position of D is: 4</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer12')">12. Find Count of a Character in a String</div>
+        <div class="answer" id="answer12">
+            <pre><code>
+public class CountCharacter {
+    public static void main(String[] args) {
+        String str = "hello";
+        char target = 'l';
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if (c == target) {
+                count++;
+            }
+        }
+        System.out.println("Count of " + target + " is: " + count);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Count of l is: 2</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer13')">13. Replace Vowels with a Special Character</div>
+        <div class="answer" id="answer13">
+            <pre><code>
+public class ReplaceVowels {
+    public static void main(String[] args) {
+        String str = "hello";
+        String replaced = str.replaceAll("[aeiou]", "*");
+        System.out.println("Replaced String: " + replaced);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Replaced String: h*ll*</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer14')">14. Find the Number of Vowels in the Given String</div>
+        <div class="answer" id="answer14">
+            <pre><code>
+public class CountVowels {
+    public static void main(String[] args) {
+        String str = "hello";
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if ("aeiou".contains(String.valueOf(c))) {
+                count++;
+            }
+        }
+        System.out.println("Number of Vowels: " + count);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Number of Vowels: 2</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer15')">15. Find Numbers from String to Calculate Sum of Them</div>
+        <div class="answer" id="answer15">
+            <pre><code>
+public class SumNumbersInString {
+    public static void main(String[] args) {
+        String str = "abc123def45";
+        int sum = 0;
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                sum += Character.getNumericValue(c);
+            }
+        }
+        System.out.println("Sum of Numbers: " + sum);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sum of Numbers: 15</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer16')">16. Count Number of Digits in a Number</div>
+        <div class="answer" id="answer16">
+            <pre><code>
+public class CountDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int count = 0;
+        while (num != 0) {
+            num /= 10;
+            count++;
+        }
+        System.out.println("Number of Digits: " + count);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Number of Digits: 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer17')">17. Count Number of EVEN & ODD Digits in a Number</div>
+        <div class="answer" id="answer17">
+            <pre><code>
+public class CountEvenOddDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int evenCount = 0, oddCount = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+            num /= 10;
+        }
+        System.out.println("Even Digits: " + evenCount + ", Odd Digits: " + oddCount);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Even Digits: 2, Odd Digits: 3</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer18')">18. Count Sum of Digits in a Number</div>
+        <div class="answer" id="answer18">
+            <pre><code>
+public class SumOfDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("Sum of Digits: " + sum);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sum of Digits: 15</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer19')">19. Find Largest of 3 Numbers</div>
+        <div class="answer" id="answer19">
+            <pre><code>
+public class LargestOfThree {
+    public static void main(String[] args) {
+        int a = 5, b = 10, c = 7;
+        int largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+        System.out.println("Largest Number: " + largest);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Largest Number: 10</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer20')">20. Remove/Find Duplicate Elements in Array</div>
+        <div class="answer" id="answer20">
+            <pre><code>
+import java.util.HashSet;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        HashSet<Integer> set = new HashSet<>();
+        for (int i : arr) {
+            set.add(i);
+        }
+        System.out.println("Array without Duplicates: " + set);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Array without Duplicates: [1, 2, 5, 6, 9]</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer21')">21. Check if a Given Number is Prime or Not</div>
+        <div class="answer" id="answer21">
+            <pre><code>
+public class PrimeNumber {
+    public static void main(String[] args) {
+        int num = 29;
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.println(num + " is Prime: " + isPrime);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>29 is Prime: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer22')">22. Find Sum of Elements in Array</div>
+        <div class="answer" id="answer22">
+            <pre><code>
+public class SumOfArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        System.out.println("Sum of Array Elements: " + sum);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sum of Array Elements: 28</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer23')">23. Print Even & Odd Numbers from Given Array</div>
+        <div class="answer" id="answer23">
+            <pre><code>
+public class EvenOddNumbers {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        System.out.print("Even Numbers: ");
+        for (int i : arr) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.print("\nOdd Numbers: ");
+        for (int i : arr) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Even Numbers: 2 6 
+Odd Numbers: 5 9 1 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer24')">24. Find Missing Number in an Array</div>
+        <div class="answer" id="answer24">
+            <pre><code>
+public class MissingNumber {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5, 6};
+        int n = arr.length + 1;
+        int totalSum = n * (n + 1) / 2;
+        int arrSum = 0;
+        for (int i : arr) {
+            arrSum += i;
+        }
+        System.out.println("Missing Number: " + (totalSum - arrSum));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Missing Number: 3</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer25')">25. Sort Elements in Array Using Bubble Sort</div>
+        <div class="answer" id="answer25">
+            <pre><code>
+public class BubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sorted Array: [1, 2, 5, 5, 6, 9]</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer26')">26. Factorial of a Number</div>
+        <div class="answer" id="answer26">
+            <pre><code>
+public class Factorial {
+    public static void main(String[] args) {
+        int num = 5;
+        int factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + num + " is: " + factorial);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Factorial of 5 is: 120</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer27')">27. Swap Two Numbers (5 Ways)</div>
+        <div class="answer" id="answer27">
+            <pre><code>
+public class SwapNumbers {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        
+        // Method 1: Using a temporary variable
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("Method 1: a = " + a + ", b = " + b);
+        
+        // Method 2: Without using a temporary variable
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("Method 2: a = " + a + ", b = " + b);
+        
+        // Method 3: Using multiplication and division
+        a = a * b;
+        b = a / b;
+        a = a / b;
+        System.out.println("Method 3: a = " + a + ", b = " + b);
+        
+        // Method 4: Using XOR
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("Method 4: a = " + a + ", b = " + b);
+        
+        // Method 5: Using a single statement
+        b = (a + b) - (a = b);
+        System.out.println("Method 5: a = " + a + ", b = " + b);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+Method 1: a = 10, b = 5
+Method 2: a = 5, b = 10
+Method 3: a = 10, b = 5
+Method 4: a = 5, b = 10
+Method 5: a = 10, b = 5
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer28')">28. Reverse a Number (3 Ways)</div>
+        <div class="answer" id="answer28">
+            <pre><code>
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int num = 1234;
+        
+        // Method 1: Using a loop
+        int reversed = 0;
+        while (num != 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println("Method 1: Reversed Number: " + reversed);
+        
+        // Method 2: Using StringBuilder
+        String str = Integer.toString(num);
+        reversed = Integer.parseInt(new StringBuilder(str).reverse().toString());
+        System.out.println("Method 2: Reversed Number: " + reversed);
+        
+        // Method 3: Using recursion
+        reversed = reverseRecursive(num, 0);
+        System.out.println("Method 3: Reversed Number: " + reversed);
+    }
+    
+    public static int reverseRecursive(int num, int reversed) {
+        if (num == 0) {
+            return reversed;
+        }
+        return reverseRecursive(num / 10, reversed * 10 + num % 10);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+Method 1: Reversed Number: 4321
+Method 2: Reversed Number: 4321
+Method 3: Reversed Number: 4321
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer29')">29. Reverse a String (3 Ways)</div>
+        <div class="answer" id="answer29">
+            <pre><code>
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello";
+        
+        // Method 1: Using StringBuilder
+        String reversed = new StringBuilder(str).reverse().toString();
+        System.out.println("Method 1: Reversed String: " + reversed);
+        
+        // Method 2: Using a loop
+        reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+        System.out.println("Method 2: Reversed String: " + reversed);
+        
+        // Method 3: Using recursion
+        reversed = reverseRecursive(str);
+        System.out.println("Method 3: Reversed String: " + reversed);
+    }
+    
+    public static String reverseRecursive(String str) {
+        if (str.isEmpty()) {
+            return str;
+        }
+        return reverseRecursive(str.substring(1)) + str.charAt(0);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+Method 1: Reversed String: olleH
+Method 2: Reversed String: olleH
+Method 3: Reversed String: olleH
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer30')">30. Palindrome Number (Check if a Number is Palindrome or Not)</div>
+        <div class="answer" id="answer30">
+            <pre><code>
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        int num = 121;
+        int originalNum = num;
+        int reversed = 0;
+        while (num != 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println(originalNum + " is Palindrome: " + (originalNum == reversed));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>121 is Palindrome: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer31')">31. Palindrome String (Check if a String is Palindrome or Not)</div>
+        <div class="answer" id="answer31">
+            <pre><code>
+public class PalindromeString {
+    public static void main(String[] args) {
+        String str = "madam";
+        String reversed = new StringBuilder(str).reverse().toString();
+        System.out.println(str + " is Palindrome: " + str.equals(reversed));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>madam is Palindrome: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer32')">32. Count Number of Digits in a Number</div>
+        <div class="answer" id="answer32">
+            <pre><code>
+public class CountDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int count = 0;
+        while (num != 0) {
+            num /= 10;
+            count++;
+        }
+        System.out.println("Number of Digits: " + count);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Number of Digits: 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer33')">33. Count Number of EVEN & ODD Digits in a Number</div>
+        <div class="answer" id="answer33">
+            <pre><code>
+public class CountEvenOddDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int evenCount = 0, oddCount = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+            num /= 10;
+        }
+        System.out.println("Even Digits: " + evenCount + ", Odd Digits: " + oddCount);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Even Digits: 2, Odd Digits: 3</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer34')">34. Count Sum of Digits in a Number</div>
+        <div class="answer" id="answer34">
+            <pre><code>
+public class SumOfDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("Sum of Digits: " + sum);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sum of Digits: 15</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer35')">35. Find Largest of 3 Numbers (2 Ways)</div>
+        <div class="answer" id="answer35">
+            <pre><code>
+public class LargestOfThree {
+    public static void main(String[] args) {
+        int a = 5, b = 10, c = 7;
+        
+        // Method 1: Using if-else
+        int largest = a;
+        if (b > largest) {
+            largest = b;
+        }
+        if (c > largest) {
+            largest = c;
+        }
+        System.out.println("Method 1: Largest Number: " + largest);
+        
+        // Method 2: Using ternary operator
+        largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+        System.out.println("Method 2: Largest Number: " + largest);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+Method 1: Largest Number: 10
+Method 2: Largest Number: 10
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer36')">36. Generate Fibonacci Series</div>
+        <div class="answer" id="answer36">
+            <pre><code>
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        int n = 10;
+        int a = 0, b = 1;
+        System.out.print("Fibonacci Series: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int sum = a + b;
+            a = b;
+            b = sum;
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Fibonacci Series: 0 1 1 2 3 5 8 13 21 34</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer37')">37. Check if a Given Number is Prime or Not</div>
+        <div class="answer" id="answer37">
+            <pre><code>
+public class PrimeNumber {
+    public static void main(String[] args) {
+        int num = 29;
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.println(num + " is Prime: " + isPrime);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>29 is Prime: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer38')">38. Generate Random Numbers & Strings (Apache Commons API)</div>
+        <div class="answer" id="answer38">
+            <pre><code>
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
+
+public class RandomGenerator {
+    public static void main(String[] args) {
+        int randomNumber = RandomUtils.nextInt(0, 100);
+        String randomString = RandomStringUtils.randomAlphabetic(10);
+        System.out.println("Random Number: " + randomNumber);
+        System.out.println("Random String: " + randomString);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>
+Random Number: 42
+Random String: abcdefghij
+            </pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer39')">39. Factorial of a Number</div>
+        <div class="answer" id="answer39">
+            <pre><code>
+public class Factorial {
+    public static void main(String[] args) {
+        int num = 5;
+        int factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + num + " is: " + factorial);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Factorial of 5 is: 120</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer40')">40. Find Sum of Elements in an Array</div>
+        <div class="answer" id="answer40">
+            <pre><code>
+public class SumOfArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int sum = 0;
+        for (int i : arr) {
+            sum += i;
+        }
+        System.out.println("Sum of Array Elements: " + sum);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sum of Array Elements: 28</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer41')">41. Print Even & Odd Numbers from an Array</div>
+        <div class="answer" id="answer41">
+            <pre><code>
+public class EvenOddNumbers {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        System.out.print("Even Numbers: ");
+        for (int i : arr) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.print("\nOdd Numbers: ");
+        for (int i : arr) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Even Numbers: 2 6 
+Odd Numbers: 5 9 1 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer42')">42. Check the Equality of Two Arrays</div>
+        <div class="answer" id="answer42">
+            <pre><code>
+import java.util.Arrays;
+
+public class ArrayEquality {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+        boolean isEqual = Arrays.equals(arr1, arr2);
+        System.out.println("Arrays are Equal: " + isEqual);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Arrays are Equal: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer43')">43. Find Missing Number in an Array</div>
+        <div class="answer" id="answer43">
+            <pre><code>
+public class MissingNumber {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 5, 6};
+        int n = arr.length + 1;
+        int totalSum = n * (n + 1) / 2;
+        int arrSum = 0;
+        for (int i : arr) {
+            arrSum += i;
+        }
+        System.out.println("Missing Number: " + (totalSum - arrSum));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Missing Number: 3</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer44')">44. Find Maximum & Minimum Values in an Array</div>
+        <div class="answer" id="answer44">
+            <pre><code>
+public class MaxMinArray {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int max = arr[0], min = arr[0];
+        for (int i : arr) {
+            if (i > max) {
+                max = i;
+            }
+            if (i < min) {
+                min = i;
+            }
+        }
+        System.out.println("Max: " + max + ", Min: " + min);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Max: 9, Min: 1</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer45')">45. Find Duplicate Elements in an Array</div>
+        <div class="answer" id="answer45">
+            <pre><code>
+import java.util.HashSet;
+
+public class DuplicateElements {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        HashSet<Integer> set = new HashSet<>();
+        System.out.print("Duplicate Elements: ");
+        for (int i : arr) {
+            if (!set.add(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Duplicate Elements: 5</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer46')">46. Search an Element in an Array (Linear Search)</div>
+        <div class="answer" id="answer46">
+            <pre><code>
+public class LinearSearch {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        int target = 9;
+        boolean found = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                found = true;
+                break;
+            }
+        }
+        System.out.println("Element Found: " + found);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Element Found: true</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer47')">47. Search an Element in an Array (Binary Search)</div>
+        <div class="answer" id="answer47">
+            <pre><code>
+import java.util.Arrays;
+
+public class BinarySearch {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        int target = 4;
+        int index = Arrays.binarySearch(arr, target);
+        System.out.println("Element Found at Index: " + index);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Element Found at Index: 3</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer48')">48. Sort Elements in an Array (Bubble Sort)</div>
+        <div class="answer" id="answer48">
+            <pre><code>
+public class BubbleSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sorted Array: [1, 2, 5, 5, 6, 9]</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer49')">49. Sort Elements in an Array Using Built-in Methods</div>
+        <div class="answer" id="answer49">
+            <pre><code>
+import java.util.Arrays;
+
+public class BuiltInSort {
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 9, 1, 5, 6};
+        Arrays.sort(arr);
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Sorted Array: [1, 2, 5, 5, 6, 9]</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer50')">50. Remove Junk or Special Characters in a String</div>
+        <div class="answer" id="answer50">
+            <pre><code>
+public class RemoveJunk {
+    public static void main(String[] args) {
+        String str = "Hello!@# World$%^";
+        String cleaned = str.replaceAll("[^a-zA-Z0-9]", "");
+        System.out.println("Cleaned String: " + cleaned);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Cleaned String: HelloWorld</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer51')">51. Remove White Spaces in a String</div>
+        <div class="answer" id="answer51">
+            <pre><code>
+public class RemoveSpaces {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        String noSpaces = str.replaceAll("\\s", "");
+        System.out.println("String without Spaces: " + noSpaces);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>String without Spaces: HelloWorld</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer52')">52. Count Occurrences of a Character in a String</div>
+        <div class="answer" id="answer52">
+            <pre><code>
+public class CountCharacter {
+    public static void main(String[] args) {
+        String str = "hello";
+        char target = 'l';
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if (c == target) {
+                count++;
+            }
+        }
+        System.out.println("Count of " + target + " is: " + count);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Count of l is: 2</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer53')">53. Count Words in a String</div>
+        <div class="answer" id="answer53">
+            <pre><code>
+public class CountWords {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        String[] words = str.split("\\s+");
+        System.out.println("Number of Words: " + words.length);
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Number of Words: 2</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer54')">54. Reverse Each Word in a String</div>
+        <div class="answer" id="answer54">
+            <pre><code>
+public class ReverseEachWord {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        String[] words = str.split(" ");
+        StringBuilder reversed = new StringBuilder();
+        for (String word : words) {
+            reversed.append(new StringBuilder(word).reverse()).append(" ");
+        }
+        System.out.println("Reversed Words: " + reversed.toString().trim());
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Reversed Words: olleH dlroW</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer55')">55. Read Data from a Text File</div>
+        <div class="answer" id="answer55">
+            <pre><code>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFile {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Contents of input.txt file</pre>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question" onclick="toggleAnswer('answer56')">56. Write Data into a Text File</div>
+        <div class="answer" id="answer56">
+            <pre><code>
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteFile {
+    public static void main(String[] args) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))) {
+            bw.write("Hello World");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Output:</strong></p>
+            <pre>Writes "Hello World" to output.txt</pre>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
